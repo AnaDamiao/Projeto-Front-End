@@ -1,0 +1,80 @@
+
+.container{
+    display: grid;
+    grid: "cabecalho   cabecalho "100px
+          "prato1a6  prato7a12 " auto
+           /50%  50%;
+}
+.cabecalho{
+    grid-area: cabecalho;
+}
+.prato1a6{
+    grid-area: prato1a6;
+}
+.prato7a12{
+    grid-area: prato7a12;
+}
+
+
+
+
+body{
+    background-color: #ffe9c9;
+}
+
+
+.cabecalho{
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-start;
+    align-items: center;
+    background-color: #dc5f00 ;
+    color: white;
+    font-family: Bodoni Moda SC;
+  
+}
+
+.titulos{
+    font-family: Corinthia;
+    font-weight: 900;
+    font-size: 2.0rem;
+
+}
+
+p{
+   
+    font-family: EB Garamond; 
+    font-weight: 400;  
+    text-align: left;
+    color:#545454;
+
+    
+    
+ }
+
+ .prato1a6{
+    border-right:1px solid white; 
+    margin: 7px;
+    padding-right: 10px;
+    margin-top: 0.5px;
+    margin-bottom: 0.5px;
+ }
+ .prato7a12{
+    margin: 7px;
+    margin-left: 2px;
+    margin-top: 0.5px;
+    margin-bottom: 0.5px;
+ }
+
+ .prato1{
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    justify-content: space-between;
+    border-bottom:  1px solid white;
+    margin: 10px;
+   
+ }
+img{
+    border-radius: 50%;
+}
