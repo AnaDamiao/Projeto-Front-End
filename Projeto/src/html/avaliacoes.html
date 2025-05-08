@@ -4,8 +4,165 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Avaliações</title>
+
+    <link rel="shortcut icon" href="/src/favicon/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/style.avaliacoes.css">
 </head>
 <body>
-    <h1>Avaliações</h1>
+    <section class="avaliacoes-section">
+        <div class="header-avaliacoes">
+          <a href="/index.html">
+            <img src="/src/favicon/favicon.ico" alt="Logo" class="logo-avaliacoes">
+          </a>
+          <h1>AVALIAÇÕES</h1>
+        </div>
+      
+      <div class="avaliacoes-container">
+        <div class="coluna">
+          <div class="avaliacao">
+            <img src="../images/avaliacoes/fotoPerfil1.jpg" alt="Foto usuário">
+            <div class="texto">
+              <h3>Gustavo</h3>
+              <p>Maravilhosa comida e garçons muito educados e gentis. Voltarei em breve!</p>
+              <div class="estrelas">★★★★★</div>
+            </div>
+          </div>
+          <div class="avaliacao">
+            <img src="../images/avaliacoes/fotoPerfil2.jpg" alt="Foto usuário">
+            <div class="texto">
+              <h3>Geovana</h3>
+              <p>Ambiente muito agradável, drinks muito bons.</p>
+              <div class="estrelas">★★★★☆</div>
+            </div>
+          </div>
+          <div class="avaliacao">
+            <img src="../images/avaliacoes/fotoPerfil3.jpg" alt="Foto usuário">
+            <div class="texto">
+              <h3>Lucas</h3>
+              <p>Muito bom lugar, elegante e refinado, perfeito para um encontro, comida sensacional.</p>
+              <div class="estrelas">★★★★★</div>
+            </div>
+          </div>
+          <div class="avaliacao">
+            <img src="../images/avaliacoes/fotoPerfil4.jpg" alt="Foto usuário">
+            <div class="texto">
+              <h3>Madalena</h3>
+              <p>Comida muito boa, mas, poderia ter manobrista no estacionamento.</p>
+              <div class="estrelas">★★★☆☆</div>
+            </div>
+          </div>
+          <div class="avaliacao">
+            <img src="../images/avaliacoes/fotoPerfil5.jpg" alt="Foto usuário">
+            <div class="texto">
+              <h3>Aline</h3>
+              <p>Belíssimo local, e comida boa, mas bem caro.</p>
+              <div class="estrelas">★★★☆☆</div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="coluna">
+            <div class="avaliacao">
+                <img src="../images/avaliacoes/fotoPerfil6.jpg" alt="Foto usuário">
+                <div class="texto">
+                  <h3>Guilherme</h3>
+                  <p>Maravilhosa comida e garçons muito educados e gentis. Voltarei em breve!</p>
+                  <div class="estrelas">★★★★★</div>
+                </div>
+              </div>
+              <div class="avaliacao">
+                <img src="../images/avaliacoes/fotoPerfil7.jpg" alt="Foto usuário">
+                <div class="texto">
+                  <h3>Ana</h3>
+                  <p>Ótimo!</p>
+                  <div class="estrelas">★★★★★</div>
+                </div>
+              </div>
+              <div class="avaliacao">
+                <img src="../images/avaliacoes/fotoPerfil8.jpg" alt="Foto usuário">
+                <div class="texto">
+                  <h3>Camila</h3>
+                  <p>Tive uma experiência maravilhosa neste restaurante. Desde a recepção calorosa até o atendimento atencioso</p>
+                  <div class="estrelas">★★★★★</div>
+                </div>
+              </div>
+              <div class="avaliacao">
+                <img src="../images/avaliacoes/fotoPerfil9.jpg" alt="Foto usuário">
+                <div class="texto">
+                  <h3>Carlos</h3>
+                  <p>SENSACIONAL</p>
+                  <div class="estrelas">★★★★★</div>
+                </div>
+              </div>
+              <div class="avaliacao">
+                <img src="../images/avaliacoes/fotoPerfil10.jpg" alt="Foto usuário">
+                <div class="texto">
+                  <h3>Renato</h3>
+                  <p>Voltarei em breve!</p>
+                  <div class="estrelas">★★★★★</div>
+                </div>
+              </div>
+        </div>
+      </div>
+  
+      <div class="containerAvaliacao">
+          <p class="subtitulo">Deixe sua Avaliação sobre Nossos Serviços</p>
+          <button class="botao-avaliacao">Escrever avaliação</button>
+      </div>
+    </section>
+
+    <div class="modal-avaliacao" id="modalAvaliacao">
+        <div class="modal-conteudo">
+            <span class="fechar" onclick="fecharModal()">&times;</span>
+            <h2>Deixe sua Avaliação</h2>
+            <form id="formAvaliacao">
+            <input type="text" id="nome" placeholder="Seu nome" required>
+            <textarea id="mensagem" rows="4" placeholder="Sua mensagem" required></textarea>
+            <label>Nota:</label>
+            <select id="nota" required>
+                <option value="5">★★★★★</option>
+                <option value="4">★★★★☆</option>
+                <option value="3">★★★☆☆</option>
+                <option value="2">★★☆☆☆</option>
+                <option value="1">★☆☆☆☆</option>
+            </select>
+            <button type="submit">Enviar Avaliação</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="mensagemSucesso" class="mensagem-sucesso">Avaliação enviada com sucesso!</div>
+
+    <script>
+        const botao = document.querySelector('.botao-avaliacao');
+        const modal = document.getElementById('modalAvaliacao');
+        const mensagem = document.getElementById('mensagemSucesso');
+        const form = document.getElementById('formAvaliacao');
+      
+        botao.onclick = () => {
+          modal.style.display = 'block';
+        };
+      
+        function fecharModal() {
+          modal.style.display = 'none';
+        }
+      
+        window.onclick = function(event) {
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
+        }
+      
+        form.onsubmit = function(e) {
+          e.preventDefault();
+          modal.style.display = 'none';
+          mensagem.style.display = 'block';
+      
+          setTimeout(() => {
+            mensagem.style.display = 'none';
+            form.reset();
+          }, 3000);
+        };
+    </script>
 </body>
 </html>

@@ -1,0 +1,199 @@
+body {
+    margin: 0;
+    font-family: Georgia, serif;
+    background-color: #fdf3e6;
+    color: #5e3c1b;
+  }
+  
+  .header-avaliacoes {
+    display: flex;
+    align-items: center;
+    background-color: #cc5802;
+    padding: 20px 40px;
+    color: white;
+  }
+  
+  .header-avaliacoes h1 {
+    margin: 0;
+    font-size: 30px;
+    margin-left: 15px;
+  }
+  
+  .logo-avaliacoes {
+    height: 40px;
+    width: auto;
+    cursor: pointer;
+  }
+  
+  .avaliacoes-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 40px 60px;
+    flex-wrap: wrap;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .coluna {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 45%;
+  }
+  
+  .avaliacao {
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .avaliacao:last-child {
+    border-bottom: none;
+  }
+  
+  .avaliacao img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #cc5802;
+  }
+  
+  .avaliacao .texto h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'Brush Script MT', cursive;
+  }
+  
+  .avaliacao .texto p {
+    margin: 5px 0;
+    font-size: 14px;
+  }
+  
+  .estrelas {
+    color: #f2c200;
+    font-size: 18px;
+  }
+  
+  .subtitulo {
+    text-align: center;
+    font-family: 'Brush Script MT', cursive;
+    font-size: 20px;
+    margin-top: 30px;
+  }
+  
+  .containerAvaliacao {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    justify-content: center;
+  }
+  
+  .botao-avaliacao {
+    background-color: #cc5802;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .botao-avaliacao:hover {
+    background-color: #a64400;
+  }
+
+  .modal-avaliacao {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+  }
+  
+  .modal-conteudo {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 30px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 400px;
+    color: #333;
+    position: relative;
+  }
+  
+  .modal-conteudo h2 {
+    margin-top: 0;
+    color: #cc5802;
+    text-align: center;
+  }
+  
+  .modal-conteudo input,
+  .modal-conteudo textarea,
+  .modal-conteudo select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
+  .modal-conteudo button {
+    margin-top: 15px;
+    background-color: #cc5802;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .modal-conteudo button:hover {
+    background-color: #a64400;
+  }
+  
+  #mensagem {
+    width: 100%;
+    height: 100px;
+    resize: none;
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  
+  .fechar {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 25px;
+    cursor: pointer;
+    color: #666;
+  }
+  
+  .mensagem-sucesso {
+    display: none;
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 5px;
+    z-index: 20;
+    font-weight: bold;
+  }
+  
