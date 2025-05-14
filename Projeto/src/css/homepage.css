@@ -4,7 +4,7 @@ body {
 
     margin: 0;
     padding: 0;
-    background-image: url('/Projeto/src/images/homepage2/corredor-borrado-com-cadeiras-e-mesas.jpg');
+    background-image: url('/src/images/homepage2/corredor-borrado-com-cadeiras-e-mesas.jpg');
     background-size: cover;
     /* Faz a imagem cobrir toda a tela */
     background-position: center;
