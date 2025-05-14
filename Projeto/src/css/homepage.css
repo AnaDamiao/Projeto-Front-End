@@ -1,0 +1,244 @@
+body {
+    display: grid;
+    grid: "header  nav" 1fr "section aside" auto / 60% 40%;
+
+    margin: 0;
+    padding: 0;
+    background-image: url('/Projeto/src/images/homepage2/corredor-borrado-com-cadeiras-e-mesas.jpg');
+    background-size: cover;
+    /* Faz a imagem cobrir toda a tela */
+    background-position: center;
+    /* Centraliza a imagem */
+    background-repeat: no-repeat;
+    /* Evita repetição da imagem */
+    height: 100vh;
+    /* Garante que o body ocupe 100% da altura da tela */
+}
+
+header {
+    grid-area: header;
+    margin: 0;
+    padding: 0;
+    background-color: #cc5802;
+    height: 110px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+header>h1 {
+    color: white;
+    margin-right: 5px;
+    margin-left: 20px;
+    font-family: "Cormorant Garamond";
+    font-size: 40px;
+
+}
+
+.separador {
+    width: 2px;
+    height: 60px;
+    /* Defina o tamanho da linha conforme necessário */
+    background-color: white;
+    /* Cor do traço */
+    margin: 0 20px;
+}
+
+header>a {
+    display: flex;
+    text-decoration: none;
+    text-decoration-color: none;
+    align-items: center;
+    justify-content: center;
+    height: 25%;
+    width: 100px;
+    border-radius: 18px;
+    border-style: none;
+    background-color: #a54700;
+    color: white;
+    font-family: sans-serif;
+    font-size: 15px;
+
+    transition: background-color 0.3s, transform 0.2s ease;
+    /* ADICIONADO */
+}
+
+a:hover {
+    background-color: #aaa3a3;
+    transform: scale(1.05);
+    /* ADICIONADO: aumenta ~1px visualmente */
+}
+
+nav {
+    grid-area: nav;
+    padding: 0;
+    background-color: #cc5802;
+    height: 110px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: right;
+    gap: 10px;
+}
+
+i {
+    color: white;
+    /* Cor branca */
+    font-size: 26px;
+    /* Tamanho maior (ajuste conforme quiser) */
+    margin-right: 16px;
+    /* Espaço entre os ícones */
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+i:hover {
+    transform: scale(1.5);
+    /* Efeito de leve aumento ao passar o mouse */
+    color: #aaa3a3;
+    /* Um branco amarelado suave ao passar o mouse (opcional) */
+}
+
+
+
+
+
+
+section {
+    grid-area: section;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+
+
+}
+
+section>h1 {
+    color: #cc5802;
+    font-size: 100px;
+    margin-bottom: 0px;
+    font-family: "Cormorant Garamond";
+
+}
+
+section>p {
+    color: #545454;
+    font-size: 20px;
+    width: 300px;
+    font-weight: bolder;
+
+}
+
+
+aside {
+    grid-area: aside;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    align-items: end;
+    gap: 20px;
+
+
+}
+
+.bife {
+    width: 250px;
+    height: 350px;
+
+}
+
+.macarrao {
+    width: 250px;
+    height: 450px;
+    margin-right: 20px;
+}
+
+@media (max-width: 480px) {
+    body {
+
+        grid: "aside header " 80% "aside nav " 20% / 40px auto 40px;
+
+        align-items: center;
+        justify-content: center;
+
+
+
+    }
+
+    header {
+
+
+        height: 100%;
+        width: 230px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+
+
+    }
+
+    header>h1 {
+
+        margin-bottom: 0px;
+        margin-top: 60px;
+        margin-left: 0px;
+        margin-right: 0px;
+
+    }
+
+    .separador {
+        width: 80px;
+        height: 2px;
+        margin-bottom: 100px;
+        margin-top: 20px;
+    }
+
+    header>a {
+
+        height: 40px;
+        width: 150px;
+        margin-bottom: 30px;
+        font-size: 20px;
+
+
+    }
+
+    nav {
+
+        padding-bottom: 40px;
+        height: 100%;
+        width: 230px;
+        align-items: flex-end;
+        justify-content: center;
+
+
+    }
+
+    i {
+
+        margin-right: 8px;
+        margin-left: 8px;
+
+
+    }
+
+    section {
+        display: none;
+
+    }
+
+    aside {
+        display: none;
+    }
+
+    .bife {
+        display: none;
+
+    }
+
+    .macarrao {
+        display: none;
+    }
+}
