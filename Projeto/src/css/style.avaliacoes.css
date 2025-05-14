@@ -1,8 +1,28 @@
 body {
     margin: 0;
-    font-family: Georgia, serif;
+    font-family: 'Inter', sans-serif;
     background-color: #fdf3e6;
     color: #5e3c1b;
+  }
+
+  i {
+    color: white;
+    font-size: 26px;
+    margin-right: 16px;
+    transition: transform 0.2s ease, color 0.2s ease;
+  }
+
+  i:hover {
+      transform: scale(1.5);
+      color: #aaa3a3;
+  }
+
+  nav {
+    padding: 0;
+    width: 100%;
+    display: flex;
+    justify-content: right;
+    gap: 10px;
   }
   
   .header-avaliacoes {
@@ -66,7 +86,7 @@ body {
     margin: 0;
     font-size: 16px;
     font-weight: bold;
-    font-family: 'Brush Script MT', cursive;
+    font-family: 'Inter', sans-serif;
   }
   
   .avaliacao .texto p {
@@ -81,7 +101,7 @@ body {
   
   .subtitulo {
     text-align: center;
-    font-family: 'Brush Script MT', cursive;
+    font-family: 'Inter', sans-serif;
     font-size: 20px;
     margin-top: 30px;
   }

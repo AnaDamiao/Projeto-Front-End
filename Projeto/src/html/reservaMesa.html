@@ -1,11 +1,197 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reserva de Mesa</title>
+  <meta charset="UTF-8">
+  <title>Reserva de Mesa</title>
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/style.Reserva.css">
+  <link rel="shortcut icon" href="/src/favicon/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="shortcut icon" href="/src/favicon/favicon.ico" type="image/x-icon">
 </head>
 <body>
-    <h1>Reserva de Mesa</h1>
+  <div class="container">
+    <div class="header-reserva">
+      <a href="/homepage.html">
+        <i class="fa-solid fa-martini-glass"></i>
+      </a>
+      <h1>RESERVA DE MESA</h1> 
+      
+      <nav>
+        <i class="fab fa-facebook-f"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-whatsapp"></i>
+        <i class="fas fa-map-marker-alt"></i>
+      </nav>
+    </div>
+    <div class="content">
+      <div class="right">
+      <div class="mesas">
+        <div class="mesa" data-lugares="4">01</div>
+        <div class="mesa" data-lugares="6">02</div>
+        <div class="mesa" data-lugares="2">03</div>
+        <div class="mesa" data-lugares="5">04</div>
+        <div class="mesa" data-lugares="7">05</div>
+        <div class="mesa" data-lugares="3">06</div>
+        <div class="mesa" data-lugares="8">07</div>
+        <div class="mesa" data-lugares="2">08</div>
+        <div class="mesa" data-lugares="6">09</div>
+        <div class="mesa" data-lugares="4">10</div>
+        <div class="mesa" data-lugares="7">12</div>
+        <div class="mesa" data-lugares="5">13</div>
+        <div class="mesa" data-lugares="3">14</div>
+        <div class="mesa" data-lugares="8">15</div>
+        <div class="mesa" data-lugares="6">16</div>
+        <div class="mesa" data-lugares="9">17</div>
+      </div>
+      </div>
+    </div>
+
+    <div class="formulario">
+      <div class="labels">
+        <label class="inputInfos">Mesa escolhida:
+          <input type="text" placeholder="___" id="inputMesa" disabled>
+        </label>
+        <label class="inputInfos">Indique o dia e horário:
+          <input type="text" placeholder="__/__/____  __:__">
+        </label>
+        <label class="inputInfos">Informe o titular da reserva:
+          <input type="text" placeholder="________ ________">
+        </label>
+        <label class="inputInfos">Informe o número do titular:
+          <input type="text" placeholder="(__) ____-____">
+        </label>
+      </div>
+      <div class="confirm">
+        <button>Confirmar</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="modalConfirmacao" class="modal hidden">
+    <div class="modal-content">
+      <div class="close-title">
+        <span class="close">X</span>
+        <h2>Reserva Confirmada!</h2>
+      </div>
+      <p><strong>Mesa:</strong> <span id="modalMesa"></span></p>
+      <p><strong>Data e horário:</strong> <span id="modalHorario"></span></p>
+      <p><strong>Nome:</strong> <span id="modalNome"></span></p>
+      <p><strong>Telefone:</strong> <span id="modalTelefone"></span></p>
+      <button id="btnImprimir">Receber informações</button>
+    </div>
+  </div>
+
+  <div id="conteudoImpressao" style="display: none;">
+    <h2>Confirmação de Reserva</h2>
+    <p><strong>Mesa:</strong> <span id="impMesa"></span></p>
+    <p><strong>Data e Horário:</strong> <span id="impHorario"></span></p>
+    <p><strong>Nome do Titular:</strong> <span id="impNome"></span></p>
+    <p><strong>Telefone:</strong> <span id="impTelefone"></span></p>
+  </div>
+
+  <div id="modalAviso" class="modal-aviso">
+    <div class="modal-aviso-conteudo">
+      <p>Preencha todos os campos para confirmar a reserva.</p>
+      <button id="fecharModalAviso">Fechar</button>
+    </div>
+  </div>
+
+  <script>
+    let mesaSelecionada = '';
+
+    document.querySelectorAll('.mesa').forEach(mesa => {
+      mesa.addEventListener('click', () => {
+        document.querySelectorAll('.mesa').forEach(m => m.classList.remove('selecionada'));
+
+        mesa.classList.add('selecionada');
+
+        mesaSelecionada = mesa.textContent;
+        const lugares = mesa.getAttribute('data-lugares');
+        document.getElementById('inputMesa').value = `Mesa ${mesaSelecionada} - ${lugares} lugares`;
+      });
+    });
+
+    document.querySelector('.confirm button').addEventListener('click', () => {
+      const inputs = document.querySelectorAll('.formulario input');
+      const mesa = inputs[0].value;
+      const horario = inputs[1].value;
+      const nome = inputs[2].value;
+      const telefone = inputs[3].value;
+
+      if (!mesa || !horario || !nome || !telefone) {
+        document.getElementById('modalAviso').style.display = 'flex';
+        return;
+      }
+
+      document.getElementById('modalMesa').textContent = mesa;
+      document.getElementById('modalHorario').textContent = horario;
+      document.getElementById('modalNome').textContent = nome;
+      document.getElementById('modalTelefone').textContent = telefone;
+
+      document.getElementById('modalConfirmacao').classList.remove('hidden');
+    });
+
+    document.querySelector('.close').addEventListener('click', () => {
+      document.getElementById('modalConfirmacao').classList.add('hidden');
+    });
+
+    window.addEventListener('click', (e) => {
+      const modal = document.getElementById('modalConfirmacao');
+      if (e.target === modal) {
+        modal.classList.add('hidden');
+      }
+    });
+
+
+
+    const dataHoraInput = document.querySelector('.formulario input[placeholder="__/__/____  __:__"]');
+
+    dataHoraInput.addEventListener('input', function (e) {
+      let valor = e.target.value.replace(/\D/g, '');
+
+      if (valor.length > 12) valor = valor.slice(0, 12);
+
+      let formatado = '';
+      if (valor.length > 0) formatado += valor.slice(0, 2); 
+      if (valor.length > 2) formatado += '/' + valor.slice(2, 4);
+      if (valor.length > 4) formatado += '/' + valor.slice(4, 8); 
+      if (valor.length > 8) formatado += '  ' + valor.slice(8, 10); 
+      if (valor.length > 10) formatado += ':' + valor.slice(10, 12); 
+
+      e.target.value = formatado;
+    });
+
+
+    document.getElementById('btnImprimir').addEventListener('click', () => {
+      
+      const mesa = document.querySelector('.formulario input[placeholder="___"]').value;
+      const horario = document.querySelector('.formulario input[placeholder="__/__/____  __:__"]').value;
+      const nome = document.querySelector('.formulario input[placeholder="________ ________"]').value;
+      const telefone = document.querySelector('.formulario input[placeholder="(__) ____-____"]').value;
+
+      document.getElementById('impMesa').innerText = mesa;
+      document.getElementById('impHorario').innerText = horario;
+      document.getElementById('impNome').innerText = nome;
+      document.getElementById('impTelefone').innerText = telefone;
+
+      const conteudo = document.getElementById('conteudoImpressao').innerHTML;
+      const win = window.open('', '', 'width=800,height=600');
+      win.document.write('<html><head><title>Reserva Confirmada</title></head><body>');
+      win.document.write(conteudo);
+      win.document.write('</body></html>');
+      win.document.close();
+      win.print();
+    });
+
+    document.getElementById('fecharModalAviso').addEventListener('click', () => {
+    document.getElementById('modalAviso').style.display = 'none';
+    });
+</script>
 </body>
 </html>
