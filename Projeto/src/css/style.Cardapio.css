@@ -1,0 +1,158 @@
+body{
+    display:grid;
+    margin: 0;
+    padding: 0;
+    background-color: #ffd9c9;
+    grid:  "icone titulo  nav" 1fr
+           "section section section "auto
+           "aside aside aside "  auto
+           /25%  50% 25%;
+}
+.icone{
+    grid-area: icone;
+}
+.titulo{
+    grid-area: titulo;
+}
+.titulo {
+    margin:0;
+    padding: 0;
+    background-color: #cc5802;
+    height: 110px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    
+     place-self: center;  
+}
+
+.icone{
+    margin:0;
+    padding-left:19px ;
+    background-color: #cc5802;
+    height: 110px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 16px;
+    justify-content: flex-start;
+   
+}
+
+h1 {
+    color: white;
+    font-family: "Cormorant Garamond";
+    font-size: 40px;
+    
+    
+
+}
+i {
+    color: white;
+    /* Cor branca */
+    font-size: 26px;
+    /* Tamanho maior (ajuste conforme quiser) */
+    margin-right: 16px;
+    /* Espaço entre os ícones */
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+i:hover {
+    transform: scale(1.5);
+    /* Efeito de leve aumento ao passar o mouse */
+    color: #aaa3a3;
+    /* Um branco amarelado suave ao passar o mouse (opcional) */
+}
+
+nav{
+  
+    margin: 0;
+    padding-right: 5px;
+    background-color: #cc5802;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+}
+section{
+    grid-area: section;
+    display: flex;
+    flex-wrap: wrap;
+   justify-content: space-evenly;
+   align-items: center;
+   margin-top: 15px;
+   margin-bottom: 18px;
+   
+
+}
+
+aside{
+    grid-area: aside;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.Prato{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    height: 260px;
+    width: 350px;
+    border-radius: 10px;
+    align-items: flex-start;
+    justify-content: center;
+    gap:0px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.219); /* sombra suave */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Efeito quando passa o mouse */
+.Prato:hover {
+    transform: scale(1.07); /* Aproximadamente 2px maior */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Sombra mais intensa */
+}
+
+img {
+  width: 95%; 
+  height: 80%;
+  border-radius: 10px;
+  margin-top: 30px;
+  margin-bottom: 0px;
+  margin-left: 9px;
+  
+}
+
+h3{
+font-family: sans-serif;
+font-size: 17px;
+color: #545454;
+margin-bottom: 0px;
+margin-top: 0px;
+margin-left:9px;
+}
+h4{
+font-family: sans-serif;
+font-size: 17px;
+color: #cc5802;
+margin-top: 0px;
+margin-left:9px;
+}
+
+@media (max-width: 480px) {
+body{
+    grid:  "titulo titulo " 1fr
+           "section section  "auto
+           "aside aside  "  auto
+           "icone nav" 0.5fr
+           /50% 50%;
+    }
+
+.Prato {
+      width: 100%; /* 1 por linha no mobile */
+      margin: 20px;
+  }
+}
