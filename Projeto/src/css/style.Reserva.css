@@ -45,7 +45,7 @@ nav {
   max-width: 100%;
   margin-top: 10px;
   background-color: #e67e22;
-  background-image: url("../images/reserva/mesa-a-procura-de-restaurante-vazio.jpg");
+  background-image: url("../images/reserva/BackgroundReserva.jpg");
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -54,20 +54,25 @@ nav {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-  .header-reserva {
-    display: flex;
-    align-items: center;
-    background-color: #cc5802;
-    padding: 20px 40px;
-    color: white;
-  }
-  
-  .header-reserva h1 {
-    margin: 0;
-    font-size: 30px;
-    margin-left: 15px;
-    width: 100%;
-  }
+.header-reserva {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  background-color: #cc5802;
+  padding: 40px 40px;
+  color: white;
+}
+
+.header-reserva h1 {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  font-size: 40px;
+  text-align: center;
+  font-family: "Cormorant Garamond";
+}
 
 .mesas {
   display: grid;

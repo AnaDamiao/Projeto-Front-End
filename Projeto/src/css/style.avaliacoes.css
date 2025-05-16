@@ -25,19 +25,25 @@ body {
     gap: 10px;
   }
   
-  .header-avaliacoes {
-    display: flex;
-    align-items: center;
-    background-color: #cc5802;
-    padding: 20px 40px;
-    color: white;
-  }
-  
-  .header-avaliacoes h1 {
-    margin: 0;
-    font-size: 30px;
-    margin-left: 15px;
-  }
+.header-avaliacoes {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  position: relative;
+  background-color: #cc5802;
+  padding: 40px 40px;
+  color: white;
+}
+
+.header-avaliacoes h1 {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  font-size: 40px;
+  text-align: center;
+  font-family: "Cormorant Garamond";
+}
   
   .logo-avaliacoes {
     height: 40px;
