@@ -139,16 +139,18 @@
 
     document.querySelector('.close').addEventListener('click', () => {
       document.getElementById('modalConfirmacao').classList.add('hidden');
+      document.querySelectorAll('.formulario input').forEach(input => input.value = '');
+      document.querySelectorAll('.mesa').forEach(m => m.classList.remove('selecionada'));
     });
 
     window.addEventListener('click', (e) => {
       const modal = document.getElementById('modalConfirmacao');
       if (e.target === modal) {
         modal.classList.add('hidden');
+        document.querySelectorAll('.formulario input').forEach(input => input.value = '');
+        document.querySelectorAll('.mesa').forEach(m => m.classList.remove('selecionada'));
       }
     });
-
-
 
     const dataHoraInput = document.querySelector('.formulario input[placeholder="__/__/____  __:__"]');
 
@@ -166,7 +168,6 @@
 
       e.target.value = formatado;
     });
-
 
     document.getElementById('btnImprimir').addEventListener('click', () => {
       
